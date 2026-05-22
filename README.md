@@ -38,3 +38,34 @@ Switch <--> PC2
 Switch <--> Impresora
 Switch <--> Server
 Switch <--> NAS
+```
+
+## Configuracion del Servidor (PowerShell)
+Para que el servidor Windows Server actua correctamente dentor del dominio, necesita una direccion IP estatica. Hemos automatizado este proceso con el siguiente bloque de codigo
+
+```powershell
+# Script para configurar una IP estatica en la interfaz principal
+# Script para configurar una IP estática en la interfaz principal
+$IP = "192.168.1.10"
+$Mascara = 24
+$PuertaEnlace = "192.168.1.1"
+
+Write-Host "Configurando el adaptador de red..."
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress $IP `
+  -PrefixLength $Mascara -DefaultGateway $PuertaEnlace
+
+# Configurar el propio servidor como DNS primario (Localhost)
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" `
+  -ServerAddresses "127.0.0.1"
+```
+
+## Tabla de Direccionamiento IP (IPv4)
+A continuacion se detalla la asignacion de direcciones para los dispositivos estaticos de la red (el resto de equipos reciben IP por DHCP)
+
+| Equipo / Dispositivo | Direccion Ip | Mascara de Subred   | Funcion Principal              |
+| :---                 | :---:        | :---:               | :---
+| Router Operadora     | 192.168.1.1  | /24 (255.255.255.0) | Puerta de Enlace (Gateway)     |               
+| Windows Server       | 192.168.1.10 | /24 (255.255.255.0) | Controlador de Dominio y DNS   |
+| NAS                  | 192.188.1.15 | /24 (255.255.255.0) | Almacenamiento en red y Copias |
+| Impresora Oficina    | 192.168.1.20 | /24 (255.255.255.0) | Impresion compartida           |
+
