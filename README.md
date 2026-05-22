@@ -12,13 +12,29 @@ A continuacion se presenta un diagrama de arquitectura de la red locla, mostrand
 
 ```mermaid
 flowchart TD
-A(Internet) <--> B[Router Operadora 192.168.1.1]
-B <--> C[Switch Principal Cisco 24 Puertos]
-subgraph "Equipos de oficina"
-C <--> D[PC Contabilidad Windows 11]
-C <--> F[PC Direccion Windows 11]
-C <--> G[Impresora Lase de red]
+%% Conexion Externa
+Internet((Internet))
+Router[Router Operadora <br/> 192.168.1.1]
+Switch[Switch Principal <br/> Cisco 24 Puertos
 
-subgraph "Sala de servidores (Rack Principal"
-C <--> H[Windows Server 2022]
-C <--> I[(NAS Synology Backups Diarios)]
+%% Zona de servidores
+  subgraph "Sala de servidores (Rack Principal"
+  Server[Windows Server 2022 <br/> AD / DNS / DHCP
+  NAS[NAS Synology <br/> Backups diarios]
+end
+
+%% Equipos de Oficina
+subgraph "Equipos de Oficina"
+  PC1[PC Contabilidad <br/> Windows 11]
+  PC2[PC Direccion <br/> Windows 11]
+  Impresora[Impresora Laser <br/> de Red]
+end
+
+%% Conexiones de Red
+Internet <--> Router
+Router <--> Switch
+Switch <--> PC1
+Switch <--> PC2
+Switch <--> Impresora
+Switch <--> Server
+Switch <--> NAS
