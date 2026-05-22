@@ -18,7 +18,7 @@ Router[Router Operadora <br/> 192.168.1.1]
 Switch[Switch Principal <br/> Cisco 24 Puertos
 
 %% Zona de servidores
-  subgraph "Sala de servidores (Rack Principal"
+subgraph "Sala de servidores (Rack Principal)"
   Server[Windows Server 2022 <br/> AD / DNS / DHCP
   NAS[NAS Synology <br/> Backups diarios]
 end
