@@ -11,7 +11,7 @@ Para mas destalles sobre los estandares de cableado estructurado aplicados, pued
 A continuacion se presenta un diagrama de arquitectura de la red locla, mostrando la conexion desde el exterior hasta los equipos finales:
 
 ```mermaid
-flowchat TD
+flowchart TD
 A(Internet) <--> B[Router Operadora 192.168.1.1]
 B <--> C[Switch Principal Cisco 24 Puertos]
 subgraph "Equipos de oficina"
