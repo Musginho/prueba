@@ -1,4 +1,4 @@
-## Infraestructura de la Red Local "TechPYME"
+# Infraestructura de la Red Local "TechPYME"
 
 Documentacion tecnica de la nueva infraestructura de red. Este proyecto es **altamente critico** para el funcionamiento de la empresa y cualquier cambio en los servidores debe hacerse con *extrema precaucion*
 
@@ -7,7 +7,7 @@ Documentacion tecnica de la nueva infraestructura de red. Este proyecto es **alt
 ![Estado](https://img.shields.io/badge/Estado-Operativa-brightgreen)
 Para mas destalles sobre los estandares de cableado estructurado aplicados, puedes consultar la normativa de la [Asociacion de la industria de Telecomuncaciones (TIA)](https://tiaonline.org/)
 
-# Topologia de la Red
+## Topologia de la Red
 A continuacion se presenta un diagrama de arquitectura de la red locla, mostrando la conexion desde el exterior hasta los equipos finales:
 
 ```mermaid
