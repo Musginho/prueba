@@ -15,7 +15,7 @@ flowchart TD
 %% Conexion Externa
 Internet((Internet))
 Router[Router Operadora <br/> 192.168.1.1]
-Switch[Switch Principal <br/> Cisco 24 Puertos
+Switch[Switch Principal <br/> Cisco 24 Puertos]
 
 %% Zona de servidores
 subgraph "Sala de servidores (Rack Principal)"
