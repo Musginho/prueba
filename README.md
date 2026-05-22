@@ -19,6 +19,6 @@ C <--> D[PC Contabilidad Windows 11]
 C <--> F[PC Direccion Windows 11]
 C <--> G[Impresora Lase de red]
 
-subgraph "Sala de servidores"
+subgraph "Sala de servidores (Rack Principal"
 C <--> H[Windows Server 2022]
 C <--> I[(NAS Synology Backups Diarios)]
