@@ -19,7 +19,7 @@ Switch[Switch Principal <br/> Cisco 24 Puertos]
 
 %% Zona de servidores
 subgraph "Sala de servidores (Rack Principal)"
-  Server[Windows Server 2022 <br/> AD / DNS / DHCP
+  Server[Windows Server 2022 <br/> AD / DNS / DHCP]
   NAS[NAS Synology <br/> Backups diarios]
 end
 
